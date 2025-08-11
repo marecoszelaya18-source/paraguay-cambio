@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paraguay Cambio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>💱 Paraguay Cambio</h1>
+        <p>"Haced todo para la gloria de Dios" - 1 Corintios 10:31 ✝️</p>
+    </header>
+
+    <main>
+        <section class="seccion">
+            <h2>Conversor de Guaraní ↔ Real</h2>
+
+            <label for="tasa">Tasa de cambio actual (1 Real en Guaraníes):</label>
+            <input type="number" id="tasa" value="1500">
+
+            <div class="caja-conversion">
+                <div>
+                    <h3>Guaraníes a Reales</h3>
+                    <input type="number" id="guaranies" placeholder="Monto en Gs">
+                    <button onclick="convertirAGuaranies()">Convertir</button>
+                    <p id="resultadoReales"></p>
+                </div>
+
+                <div>
+                    <h3>Reales a Guaraníes</h3>
+                    <input type="number" id="reales" placeholder="Monto en R$">
+                    <button onclick="convertirAReales()">Convertir</button>
+                    <p id="resultadoGuaranies"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Paraguay Cambio - Servicio con honestidad y fe ✝️</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
