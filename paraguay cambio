@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paraguay Cambio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>💱 Paraguay Cambio</h1>
+        <p>"Haced todo para la gloria de Dios" - 1 Corintios 10:31 ✝️</p>
+    </header>
+
+    <main>
+        <section class="seccion">
+            <h2>Conversor de Guaraní ↔ Real</h2>
+
+            <label for="tasa">Tasa de cambio actual (1 Real en Guaraníes):</label>
+            <input type="number" id="tasa" value="1500">
+
+            <div class="caja-conversion">
+                <div>
+                    <h3>Guaraníes a Reales</h3>
+                    <input type="number" id="guaranies" placeholder="Monto en Gs">
+                    <button onclick="convertirAGuaranies()">Convertir</button>
+                    <p id="resultadoReales"></p>
+                </div>
+
+                <div>
+                    <h3>Reales a Guaraníes</h3>
+                    <input type="number" id="reales" placeholder="Monto en R$">
+                    <button onclick="convertirAReales()">Convertir</button>
+                    <p id="resultadoGuaranies"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Paraguay Cambio - Servicio con honestidad y fe ✝️</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #007BFF;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+header p {
+    font-style: italic;
+}
+
+.seccion {
+    padding: 20px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input {
+    padding: 8px;
+    margin: 5px;
+    width: 200px;
+}
+
+button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.caja-conversion {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.caja-conversion div {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 250px;
+}
+
+footer {
+    background: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+function convertirAGuaranies() {
+    let tasa = parseFloat(document.getElementById("tasa").value);
+    let monto = parseFloat(document.getElementById("guaranies").value);
+    if (isNaN(monto) || isNaN(tasa)) {
+        alert("Por favor, ingresa números válidos.");
+        return;
+    }
+    let resultado = monto / tasa;
+    document.getElementById("resultadoReales").textContent = 
+        `${monto.toLocaleString()} Gs = ${resultado.toFixed(2)} R$`;
+}
+
+function convertirAReales() {
+    let tasa = parseFloat(document.getElementById("tasa").value);
+    let monto = parseFloat(document.getElementById("reales").value);
+    if (isNaN(monto) || isNaN(tasa)) {
+        alert("Por favor, ingresa números válidos.");
+        return;
+    }
+    let resultado = monto * tasa;
+    document.getElementById("resultadoGuaranies").textContent = 
+        `${monto.toFixed(2)} R$ = ${resultado.toLocaleString()} Gs`;
+}
